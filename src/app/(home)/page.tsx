@@ -1,7 +1,12 @@
+import DiaryList from "@/components/diary-list";
+import Link from "next/link";
+
 export default function HomePage() {
+  // todo :: header에 년월일 추가
   return (
     <main className="">
-      <div>안녕하세요?</div>
+      <Link href="/new">작성</Link>
+      <DiaryList />
     </main>
   );
 }
