@@ -14,7 +14,7 @@ export default function DiaryList() {
     <section>
       {diaryData.map((element: MockData, index: number) => (
         <li key={element.id}>
-          {element.content}
+          {element.date} | {element.content}
           <Link href={`/edit/${element.id}`}>수정</Link>
           <button onClick={() => onDelete(element.id)}>삭제</button>
         </li>

@@ -10,13 +10,13 @@ interface ProvidersProps {
 
 interface DiaryState {
   id: number;
-  date: number;
+  date: string;
   content: string;
 }
 
 interface DiaryDispatch {
-  onCreate: (date: number, content: string) => void;
-  onUpdate: (id: number, date: number, content: string) => void;
+  onCreate: (date: string, content: string) => void;
+  onUpdate: (id: number, date: string, content: string) => void;
   onDelete: (id: number) => void;
 }
 
@@ -31,7 +31,7 @@ export function Providers({ children }: ProvidersProps) {
   const [data, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(4);
 
-  const onCreate = (date: number, content: string) => {
+  const onCreate = (date: string, content: string) => {
     dispatch({
       type: "CREATE",
       data: {
@@ -42,7 +42,7 @@ export function Providers({ children }: ProvidersProps) {
     });
   };
 
-  const onUpdate = (id: number, date: number, content: string) => {
+  const onUpdate = (id: number, date: string, content: string) => {
     dispatch({
       type: "UPDATE",
       data: {
