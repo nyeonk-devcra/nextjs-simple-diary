@@ -6,6 +6,6 @@ export default function DiaryPage({
   params: { id: string };
 }) {
   if (!Number(id)) return <NotFoundPage />;
-  console.log(!Number(id));
-  return <div>DiaryDetail</div>;
+
+  return <section></section>;
 }

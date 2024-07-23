@@ -2,7 +2,7 @@
 
 import { DiaryStateContext, DiaryDispatchContext } from "../app/providers";
 import { useContext } from "react";
-import { MockData } from "@/type/mock";
+import { MockData } from "@/types/mock";
 import Link from "next/link";
 
 export default function DiaryList() {
@@ -12,12 +12,14 @@ export default function DiaryList() {
   if (!diaryData.length) return <h2>작성된 일기가 없습니다!</h2>;
   return (
     <section>
-      {diaryData.map((element: MockData, index: number) => (
-        <li key={element.id}>
-          {element.date} | {element.content}
+      {diaryData.map((element: MockData) => (
+        <div key={element.id}>
+          <Link href={`/${element.id}`}>
+            {element.date} | {element.content}
+          </Link>
           <Link href={`/edit/${element.id}`}>수정</Link>
           <button onClick={() => onDelete(element.id)}>삭제</button>
-        </li>
+        </div>
       ))}
     </section>
   );

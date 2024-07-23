@@ -1,4 +1,5 @@
 import NotFoundPage from "@/app/not-found";
+import SubmitButton from "@/components/submit-button";
 
 export default function EditPage({
   params: { id },
@@ -7,5 +8,10 @@ export default function EditPage({
 }) {
   if (!Number(id)) return <NotFoundPage />;
 
-  return <div>EditPage</div>;
+  return (
+    <section>
+      <div>EditPage {id}</div>
+      <SubmitButton action="CREATE" diaryId={Number(id)} />
+    </section>
+  );
 }

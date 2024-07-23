@@ -1,3 +1,9 @@
+import SubmitButton from "@/components/submit-button";
+
 export default function NewPage() {
-  return <div>NewPage</div>;
+  return (
+    <section>
+      <SubmitButton action="CREATE" />
+    </section>
+  );
 }
