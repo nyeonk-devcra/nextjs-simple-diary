@@ -2,7 +2,7 @@
 
 import { useReducer, ReactNode, useRef, createContext } from "react";
 import { reducer } from "./reducer";
-import { mockData } from "../type/mock";
+import { mockData } from "../types/mock";
 
 interface ProvidersProps {
   children: ReactNode;

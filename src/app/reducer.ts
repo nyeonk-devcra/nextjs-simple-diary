@@ -1,6 +1,4 @@
-"use client";
-
-import { MockData } from "../type/mock";
+import { MockData } from "../types/mock";
 
 function reducer(
   state: MockData[],
