@@ -10,8 +10,7 @@ export default function EditPage({
 
   return (
     <section>
-      <div>EditPage {id}</div>
-      <SubmitButton action="CREATE" diaryId={Number(id)} />
+      <SubmitButton action="UPDATE" diaryId={Number(id)} />
     </section>
   );
 }

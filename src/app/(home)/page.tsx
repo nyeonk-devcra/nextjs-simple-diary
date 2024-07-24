@@ -5,7 +5,7 @@ export default function HomePage() {
   // todo :: header에 년월일 추가
   return (
     <main className="">
-      <Link href="/new">작성</Link>
+      <Link href="/new">일기 작성</Link>
       <DiaryList />
     </main>
   );

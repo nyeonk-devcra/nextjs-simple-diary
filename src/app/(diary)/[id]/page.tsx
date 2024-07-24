@@ -1,4 +1,5 @@
 import NotFoundPage from "@/app/not-found";
+import DiaryDetail from "@/components/diary-detail";
 
 export default function DiaryPage({
   params: { id },
@@ -7,5 +8,9 @@ export default function DiaryPage({
 }) {
   if (!Number(id)) return <NotFoundPage />;
 
-  return <section></section>;
+  return (
+    <section>
+      <DiaryDetail id={id} />
+    </section>
+  );
 }
