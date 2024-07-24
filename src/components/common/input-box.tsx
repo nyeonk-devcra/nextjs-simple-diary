@@ -1,38 +1,28 @@
 "use client";
 
 import { InputType } from "@/types/input";
-import Link from "next/link";
+import { MockData } from "@/types/mock";
+import { useRouter } from "next/navigation";
 import { ChangeEvent, useEffect, useState } from "react";
 
 interface InputBoxProps {
-  initData?: InputType;
+  initData?: MockData;
   onSubmit: (input: InputType) => void;
 }
-
-/*
-  todo :: 어떤 페이지냐에 따라 버튼 다르게 띄우기
-  create : 취소 및 작성 버튼
-  update : 취소 및 작성 버튼
-  diary detail: 취소 및 수정/삭제 버튼
-*/
 
 export default function InputBox(props: InputBoxProps) {
   const { initData, onSubmit } = props;
   const [input, setInput] = useState({
-    createdDate: initData ? new Date(initData.createdDate) : new Date(),
+    createdDate: initData ? new Date(initData.date) : new Date(),
     content: initData ? initData.content : "",
   });
-  // const [input, setInput] = useState({
-  //   createdDate: new Date(),
-  //   content: "",
-  // });
+  const router = useRouter();
 
   useEffect(() => {
     if (initData) {
-      console.log("있냐?", initData);
       setInput({
         ...initData,
-        createdDate: new Date(Number(initData.createdDate)),
+        createdDate: new Date(initData.date),
       });
     }
   }, [initData]);
@@ -72,9 +62,16 @@ export default function InputBox(props: InputBoxProps) {
         />
       </div>
       <div>
-        <button>취소하기</button>
-        <button onClick={() => onSubmit(input)}>작성 완료</button>
-        <Link href="/">홈으로</Link>
+        <button>취소</button>
+        <button
+          onClick={() => {
+            onSubmit(input);
+            alert("일기 작성 완료!");
+            router.push("/");
+          }}
+        >
+          작성 완료
+        </button>
       </div>
     </section>
   );
