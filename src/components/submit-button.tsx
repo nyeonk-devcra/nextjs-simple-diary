@@ -1,6 +1,6 @@
 "use client";
 
-import { DiaryDispatchContext, DiaryStateContext } from "@/app/providers";
+import { DiaryDispatchContext } from "@/app/providers";
 import { useContext } from "react";
 import InputBox from "./common/input-box";
 import { InputType } from "@/types/input";
@@ -10,9 +10,6 @@ interface submitButtonProps {
   action: string;
   diaryId?: number;
 }
-
-// todo :: 컴포넌트명 변경
-// todo :: return 값 사실상 필요 없음 -> custom hook으로 변경하자
 
 export default function SubmitButton(props: submitButtonProps) {
   const { action, diaryId } = props;

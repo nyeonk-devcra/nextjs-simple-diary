@@ -62,7 +62,7 @@ export default function InputBox(props: InputBoxProps) {
         />
       </div>
       <div>
-        <button>취소</button>
+        <button onClick={() => router.back()}>취소</button>
         <button
           onClick={() => {
             onSubmit(input);
@@ -76,4 +76,3 @@ export default function InputBox(props: InputBoxProps) {
     </section>
   );
 }
-// Todo :: nextJS 뒤로 돌아가기 관련 규칙있는지 찾아보기
